@@ -1,50 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>rating</title>
-    <link rel="stylesheet" href="css/main.css" type="text/css"/>
+<?php
+    function __autoload($class_name) {
+        $filename = strtolower($class_name) . '.php';
+        $file = site_path . 'classes' . DIRSEP . $filename;
 
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+        if (file_exists($file) == false) {
+            return false;
+        }
 
-    <!--script type="text/javascript" src="js/jquery.js"></script-->
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/underscore.js"></script>
-    <script type="text/javascript" src="js/backbone.js"></script>
-    <script type="text/javascript" src="js/model.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+        include ($file);
+    }
 
-</head>
+    error_reporting(E_ALL);
+    if (version_compare(phpversion(), '5.1.0', '<') == true) { die ('PHP5.1 Only'); }
 
-<body>
-	<div id="wrapper" class="wrapper">
-		<?php
-            require "predis/autoload.php";
-
-            Predis\Autoloader::register();
-
-            try {
-                $redis = new Predis\Client();
-                // This connection is for a remote server
-                /*
-                    $redis = new PredisClient(array(
-                        "scheme" => "tcp",
-                        "host" => "153.202.124.2",
-                        "port" => 6379
-                    ));
-                */
-                // получаем строу по ключу
-
-                // finally
-                $data = 'ae';
-                print_r($data);
-            }
-            catch (Exception $e) {
-                die($e->getMessage());
-            }
-		?>
-	</div>
-</body>
-</html>
+    // Константы:
+    define('DIRSEP', DIRECTORY_SEPARATOR);
+    // Узнаём путь до файлов сайта
+    $site_path = realpath(dirname(__FILE__) . DIRSEP . '..' . DIRSEP) . DIRSEP;
+    define('site_path', $site_path);
+    require('../includes/start.php');
+?>
