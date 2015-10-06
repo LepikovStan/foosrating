@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline:none;
+}
+html {
+    height: 100%;
+    font-size: 100.1%;
+}
+body {
+    font: 12px/1.333 trebuchet ms;
+    height: 100%;
+}
+a img, fieldset {
+    border: 0;
+}
+a {
+    outline: none;
+    color: #a70328;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight:normal;
+}
+/*a:hover{
+	color:#3fa9f5;
+}*/
+li {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+}
+/* html (begin) */
+article,aside,canvas,details,embed,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {display: block;}
+command,datalist,keygen,mark,meter,progress,rp,rt,ruby,time,wbr {display: inline;}
+/* html (end) */
+
+/* wrapper (begin) */
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+/* wrapper (begin) */
