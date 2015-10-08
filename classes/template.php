@@ -3,7 +3,7 @@
         private $file = '';
         private $template = false;
         private $vars = array(
-            '{staticPath}' => '../static'
+            '{staticPath}' => '/static'
         );
 
         function __construct($filename) {
