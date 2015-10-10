@@ -28,7 +28,7 @@ li {
     list-style: none;
 }
 table {
-    border-collapse: collapse;
+	border-collapse: collapse;
 }
 /* html (begin) */
 article,aside,canvas,details,embed,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {display: block;}
@@ -38,6 +38,84 @@ command,datalist,keygen,mark,meter,progress,rp,rt,ruby,time,wbr {display: inline
 /* wrapper (begin) */
 .wrapper {
     width: 1200px;
-    margin: 0 auto;
+    margin: 30px auto 0;
 }
-/* wrapper (begin) */
+/* wrapper (end) */
+
+/* register (begin) */
+.register {}
+.register .head {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+.register fieldset {
+    margin: 10px 0 0;
+}
+.register .buttons {
+    margin: 10px 0 0;
+}
+/* register (end) */
+
+/* auth (begin) */
+.auth {
+    margin: 20px 0 0;
+}
+.auth .head {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+.auth fieldset {
+    margin: 10px 0 0;
+}
+.auth .buttons {
+    margin: 10px 0 0;
+}
+/* auth (end) */
+
+/* ratingTable (begin) */
+.ratingTable {}
+.ratingTable table {
+	border-collapse: collapse;
+}
+.ratingTable th {
+	font-size: 12px;
+	border: 1px solid #000;
+	padding: 10px;
+}
+.ratingTable td {
+	border: 1px solid #000;
+	padding: 10px;
+}
+.ratingTable tr.nonactive td {
+	color: #aaa;
+}
+.ratingTable .placeDiff {
+	position: relative;
+	padding: 10px;
+	margin: -10px;
+}
+.ratingTable .placeDiff span {
+	position: absolute;
+	right: 100%;
+	margin-right: 10px;
+}
+/* ratingTable (end) */
+
+/* cols (begin) */
+.cols {}
+.cols:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.cols .l-col {
+    float: left;
+    width: 17%;
+}
+.cols .r-col {
+    float: right;
+    width: 80%;
+}
+/* cols (end) */

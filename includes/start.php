@@ -8,6 +8,6 @@
     $registry->set('redis', $redis->getInstance());
     $registry->set('router', $router);
 
-    $router->setPath(site_path . 'controllers');
+    $router->setPath(SITE_PATH . 'controllers');
     $router->delegate();
 ?>

@@ -4,7 +4,7 @@
 
     function __autoload($class_name) {
         $filename = strtolower($class_name) . '.php';
-        $file = site_path . 'classes' . DIRSEP . $filename;
+        $file = SITE_PATH . 'classes' . DIRSEP . $filename;
 
         if (file_exists($file) == false) {
             return false;
@@ -12,10 +12,6 @@
 
         require($file);
     }
-    // Константы:
-    define('DIRSEP', DIRECTORY_SEPARATOR);
-    // Узнаём путь до файлов сайта
-    $site_path = realpath(dirname(__FILE__) . DIRSEP . '..' . DIRSEP) . DIRSEP;
-    define('site_path', $site_path);
+    require('../includes/const.php');
     require('../includes/start.php');
 ?>
