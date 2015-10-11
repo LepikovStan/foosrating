@@ -1,4 +1,4 @@
-<form class="register" name="register" method="POST" action="/register">
+<form class="register form" name="register" method="POST" action="/register">
     <div class="head">Регистрация</div>
     <fieldset>
         <label>

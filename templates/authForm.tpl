@@ -1,4 +1,4 @@
-<form class="auth" name="auth" method="POST" action="/auth">
+<form class="auth form" name="auth" method="POST" action="/auth">
     <div class="head">Авторизация</div>
     <fieldset>
         <label>

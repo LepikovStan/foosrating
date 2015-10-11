@@ -42,37 +42,23 @@ command,datalist,keygen,mark,meter,progress,rp,rt,ruby,time,wbr {display: inline
 }
 /* wrapper (end) */
 
-/* register (begin) */
-.register {}
-.register .head {
+/* form (begin) */
+.form {}
+.form .head {
     font-size: 16px;
     font-weight: bold;
     margin: 0 0 10px;
 }
-.register fieldset {
+.form fieldset {
     margin: 10px 0 0;
 }
-.register .buttons {
+.form input {
+    display: block;
+}
+.form .buttons {
     margin: 10px 0 0;
 }
 /* register (end) */
-
-/* auth (begin) */
-.auth {
-    margin: 20px 0 0;
-}
-.auth .head {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0 0 10px;
-}
-.auth fieldset {
-    margin: 10px 0 0;
-}
-.auth .buttons {
-    margin: 10px 0 0;
-}
-/* auth (end) */
 
 /* ratingTable (begin) */
 .ratingTable {}

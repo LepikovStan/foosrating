@@ -3,6 +3,7 @@
         {userLogged}
         {regForm}
         {authForm}
+        {addPlayerForm}
     </div>
     <div class="ratingTable r-col">
         <table>
