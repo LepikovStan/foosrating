@@ -1,12 +1,6 @@
 <?php
     require('../utils/utils.php');
 
-    function getErrorMsg(){
-        return array(
-            'empty' => 'This field must be required'
-        );
-    }
-
     Class Template {
         private $file = '';
         private $template = false;
@@ -14,36 +8,23 @@
             'staticPath' => '/static'
         );
 
-        public static function validate($key, $value) {
-            if (empty($value)) {
-                return 'empty';
-            }
-            return '';
-        }
-
-        public static function parseErrors() {
-            $errors = array();
-            $errorMsg = getErrorMsg();
-
-            foreach ($_GET as $key => $value) {
-                if (isset($key) && Utils::startsWith($key, 'error_') && isset($errorMsg[$value])) {
-                    $errors[$key] = $errorMsg[$value];
-                }
-            }
-
-            return $errors;
-        }
-
-        function __construct($filename) {
+        function __construct($filename, $main = false) {
             $this->file = SITE_PATH . DIRSEP . 'templates' . DIRSEP . $filename . '.tpl';
-            $this->header = SITE_PATH . DIRSEP . 'templates' . DIRSEP . 'header.tpl';
-            $this->footer = SITE_PATH . DIRSEP . 'templates' . DIRSEP . 'footer.tpl';
+            if ($main) {
+                $this->header = SITE_PATH . DIRSEP . 'templates' . DIRSEP . 'header.tpl';
+                $this->footer = SITE_PATH . DIRSEP . 'templates' . DIRSEP . 'footer.tpl';
+            }
 
             if(empty($this->file) or !file_exists($this->file)) {
                 exit('Has no such template file!');
             }
 
-            $this->template = file_get_contents($this->header) . file_get_contents($this->file) . file_get_contents($this->footer);
+            if ($main) {
+                $this->template = file_get_contents($this->header) . file_get_contents($this->file) . file_get_contents($this->footer);
+            } else {
+                $this->template = file_get_contents($this->file);
+            }
+
             return $this;
         }
 

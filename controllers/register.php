@@ -14,6 +14,7 @@
             if (!$this->checkUserAvailable($login)) {
                 $this->redis->rpush(USER_DB_KEY, $login);
                 $this->redis->hset(USER_DATA_KEY . $login, 'password', $password);
+                $this->redis->bgsave();
                 session_start();
 
                 $_SESSION['user'] = array('login' => $login, 'auth_time' => time());

@@ -55,6 +55,13 @@ command,datalist,keygen,mark,meter,progress,rp,rt,ruby,time,wbr {display: inline
 .form input {
     display: block;
 }
+.form select {
+    display: block;
+}
+.form fieldset input,
+.form fieldset select {
+    margin: 5px 0 0;
+}
 .form .buttons {
     margin: 10px 0 0;
 }
@@ -98,10 +105,38 @@ command,datalist,keygen,mark,meter,progress,rp,rt,ruby,time,wbr {display: inline
 }
 .cols .l-col {
     float: left;
-    width: 17%;
+    width: 15%;
 }
 .cols .r-col {
     float: right;
-    width: 80%;
+}
+.cols .ratingTable {
+    width: 65%;
+}
+.cols .tournament {
+    width: 17%;
+    margin: 0 0 0 2%;
 }
 /* cols (end) */
+
+/* userLogged (begin) */
+.userLogged {
+    margin: 0 0 20px;
+}
+/* userLogged (end) */
+
+/* tournament (begin) */
+.tournament {}
+.tournament input[type=text] {
+    width: 173px;
+}
+.tournament select {
+    width: 175px;
+}
+/* tournament (end) */
+
+/* register (begin) */
+.register {
+    margin: 0 0 20px;
+}
+/* register (end) */
